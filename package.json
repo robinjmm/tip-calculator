@@ -1,0 +1,28 @@
+{
+  "name": "tip-calculator",
+  "version": "1.0.0",
+  "description": "My solution for the Tip Calculator challenge from Frontendmentor.io",
+  "main": "index.js",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinjmm/tip-calculator.git"
+  },
+  "author": "robinjmm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robinjmm/tip-calculator/issues"
+  },
+  "homepage": "https://github.com/robinjmm/tip-calculator#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}
