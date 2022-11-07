@@ -1,0 +1,11 @@
+{
+    "plugins": {
+        "@fullhuman/postcss-purgecss": {
+            "content": ["./src/index.html"],
+            "css": ["./src/scss/styles.scss"],
+            "fontFace": true,
+            "variables": true,
+            "keyframes": true
+        }
+    }
+}

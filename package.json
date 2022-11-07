@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/robinjmm/tip-calculator#readme",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "parcel": "^2.7.0"
   },
   "dependencies": {
