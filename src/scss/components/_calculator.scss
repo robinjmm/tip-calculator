@@ -11,7 +11,7 @@
     &__label {
         color: var(--label-color);
         display: block;
-        margin-bottom: toEm(8px, 16px);
+        margin-bottom: 0.5em; // 8px/16px, default font-size of 16px
 
         &--small {
             font-size: toRem(14px);
@@ -27,7 +27,7 @@
         border: none;
         color: var(--input-color);
         text-align: right;
-        padding: toEm(10px, 24px) toEm(15px, 24px);
+        padding: 0.5em 0.625em; // 12px/24px, 15px/24px, calc__input font-size of 24px
         border-radius: 5px;
         cursor: pointer;
 
@@ -43,7 +43,7 @@
             flex: 1;
             text-align: center;
             min-width: 120px;
-            padding: toEm(15px, 24px) 0;
+            padding: 0.625em 0; // 15px/24px, calc__input font-size of 24px
         }
 
         &-group {
@@ -64,7 +64,7 @@
         color: var(--text-color);
         min-width: 120px;
         font-size: toRem(24px);
-        padding: toEm(15px, 24px) 0;
+        padding: 0.625em 0; // 15px/24px, .calc__btn font-size of 24px
         border-radius: 8px;
 
         &--large {
@@ -72,7 +72,7 @@
             text-transform: uppercase;
             background: hsla(172, 67%, 45%, .3);
             width: 100%;
-            margin-top: 1.7em;
+            margin-top: 2em; // 40px/20px, .calc__btn--large font-size of 20px
             color: hsla(183, 100%, 15%, .4);
         }
     }
@@ -80,7 +80,7 @@
     &__total {
         background-color: var(--bg-calc-total);
         border-radius: 10px;
-        padding: 2.8125em 1.25em 1.25em;
+        padding: 2.8125em 1.25em 1.25em; // 45px/16px, 20px/16px, 20px/16px, default font-size of 16px
 
         &-group {
             display: flex;

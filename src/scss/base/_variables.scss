@@ -22,11 +22,3 @@
     $remValue: calc(($value / 16px) * 1rem);
     @return $remValue;
 }
-
-
-// $value is the desired size
-// $base is font-size of the parent
-@function toEm($value, $base) {
-    $emValue: calc(($value / $base) * 1em);
-    @return $emValue;
-}
