@@ -1,0 +1,32 @@
+:root {
+    // Colors
+    --text-color: hsl(0, 0%, 100%);
+    --value-color: hsl(172, 67%, 45%);
+    --label-color: hsl(186, 14%, 43%);
+    --input-color: hsl(183, 100%, 15%);
+    --input-outline-color: hsl(172, 67%, 45%);
+    --input-placeholder-color: hsl(184, 14%, 56%);
+
+    --bg-calc: hsl(0, 0%, 100%);
+    --bg-calc-btn: hsl(183, 100%, 15%);
+    --bg-input: hsl(189, 41%, 97%);
+    --bg-body: hsl(185, 41%, 84%);
+    --bg-calc-total: hsl(183, 100%, 15%);
+
+    // Fonts
+    --ff-primary: "Space Mono", sans-serif, monospace;
+}
+
+// Functions
+@function toRem($value) {
+    $remValue: calc(($value / 16px) * 1rem);
+    @return $remValue;
+}
+
+
+// $value is the desired size
+// $base is font-size of the parent
+@function toEm($value, $base) {
+    $emValue: calc(($value / $base) * 1em);
+    @return $emValue;
+}

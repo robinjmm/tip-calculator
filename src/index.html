@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="My solution for the Tip Calculator challenge from Frontendmentor.io">
 
     <!-- Favicons -->
@@ -11,27 +12,61 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
     <title>Tip Calculator</title>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="scss/styles.scss">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-Bill
+    <header>
+        <img class="logo" src="assets/images/logo.svg" alt="SPLITTER word logo">
+    </header>
 
-Select Tip %
-5%
-10%
-15%
-25%
-50%
-Custom
+    <main>
+        <div class="calc">
+            <form class="calc__form">
+                <div class="calc__input-group">
+                    <label class="calc__label" for="bill">Bill</label>
+                    <input class="calc__input" type="text" id="bill" placeholder="0">
+                </div>
 
-Number of People
+                <div class="calc__input-group">
+                    <p class="calc__label">Select Tip %</p>
+                    <div class="calc__flex">
+                        <button class="calc__btn">5%</button>
+                        <button class="calc__btn">10%</button>
+                        <button class="calc__btn">15%</button>
+                        <button class="calc__btn">25%</button>
+                        <button class="calc__btn">50%</button>
+                        <input class=" calc__input calc__input--custom" type="text" placeholder="Custom">
+                    </div>
+                </div>
 
-Tip Amount
-/ person
+                <div class="calc__input-group">
+                    <label class="calc__label" for="number">Number of People</label>
+                    <input class="calc__input" type="text" id="number" placeholder="0">
+                </div>
+            </form>
 
-Total
-/ person
+            <div class="calc__total">
+                <div class="calc__total-group">
+                    <p>Tip Amount <br> <span class="calc__label calc__label--small">/ person</span> </p>
+                    <p><span class="calc__total-value">0.00</span> </p>
+                </div>
 
-Reset
+                <div class="calc__total-group">
+                    <p>Total <br> <span class="calc__label calc__label--small">/ person</span> </p>
+                    <p><span class="calc__total-value">0.00</span> </p>
+                </div>
+
+                <button class="calc__btn calc__btn--large">Reset</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
