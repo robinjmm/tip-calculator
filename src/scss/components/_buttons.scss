@@ -1,0 +1,21 @@
+@use "../base/variables" as *;
+
+.btn {
+    flex: 1;
+    text-align: center;
+    background-color: var(--bg-calc-btn);
+    color: var(--text-color);
+    min-width: 120px;
+    font-size: toRem(24px);
+    padding: 0.625em 0; // 15px/24px, .calc__btn font-size of 24px
+    border-radius: 8px;
+
+    &--large {
+        font-size: toRem(20px);
+        text-transform: uppercase;
+        background: hsla(172, 67%, 45%, .3);
+        width: 100%;
+        margin-top: 2em; // 40px/20px, .calc__btn--large font-size of 20px
+        color: hsla(183, 100%, 15%, .4);
+    }
+}

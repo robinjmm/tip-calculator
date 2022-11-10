@@ -1,0 +1,44 @@
+@use "../base/variables" as *;
+
+.input-group {
+    margin-bottom: toRem(35px);
+}
+
+.label {
+    color: var(--label-color);
+    display: block;
+    margin-bottom: 0.5em; // 8px/16px, default font-size of 16px
+
+    &--small {
+        font-size: toRem(14px);
+        margin-bottom: 0;
+    }
+}
+
+.input {
+    display: block;
+    width: 100%;
+    font-size: toRem(24px);
+    background-color: var(--bg-input);
+    border: none;
+    color: var(--input-color);
+    text-align: right;
+    padding: 0.5em 0.625em; // 12px/24px, 15px/24px, calc__input font-size of 24px
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:active, &:focus {
+        outline: 2px solid var(--input-outline-color);
+    }
+
+    &::placeholder {
+        color: var(--input-placeholder-color);
+    }
+
+    &--custom {
+        flex: 1;
+        text-align: center;
+        min-width: 120px;
+        padding: 0.625em 0; // 15px/24px, calc__input font-size of 24px
+    }
+}

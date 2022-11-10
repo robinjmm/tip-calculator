@@ -8,89 +8,26 @@
     background-color: var(--bg-calc);
     max-width: 375px;
 
-    &__label {
-        color: var(--label-color);
-        display: block;
-        margin-bottom: 0.5em; // 8px/16px, default font-size of 16px
-
-        &--small {
-            font-size: toRem(14px);
-            margin-bottom: 0;
-        }
-    }
-
-    &__input {
-        display: block;
-        width: 100%;
-        font-size: toRem(24px);
-        background-color: var(--bg-input);
-        border: none;
-        color: var(--input-color);
-        text-align: right;
-        padding: 0.5em 0.625em; // 12px/24px, 15px/24px, calc__input font-size of 24px
-        border-radius: 5px;
-        cursor: pointer;
-
-        &:active, &:focus {
-            outline: 2px solid var(--input-outline-color);
-        }
-
-        &::placeholder {
-            color: var(--input-placeholder-color);
-        }
-
-        &--custom {
-            flex: 1;
-            text-align: center;
-            min-width: 120px;
-            padding: 0.625em 0; // 15px/24px, calc__input font-size of 24px
-        }
-
-        &-group {
-            margin-bottom: toRem(30px);
-        }
-    }
-
-    &__flex {
+    &--flex {
         display: flex;
         flex-flow: row wrap;
         gap: 15px 15px;
-    }
-
-    &__btn {
-        flex: 1;
-        text-align: center;
-        background-color: var(--bg-calc-btn);
-        color: var(--text-color);
-        min-width: 120px;
-        font-size: toRem(24px);
-        padding: 0.625em 0; // 15px/24px, .calc__btn font-size of 24px
-        border-radius: 8px;
-
-        &--large {
-            font-size: toRem(20px);
-            text-transform: uppercase;
-            background: hsla(172, 67%, 45%, .3);
-            width: 100%;
-            margin-top: 2em; // 40px/20px, .calc__btn--large font-size of 20px
-            color: hsla(183, 100%, 15%, .4);
-        }
     }
 
     &__total {
         background-color: var(--bg-calc-total);
         border-radius: 10px;
         padding: 2.8125em 1.25em 1.25em; // 45px/16px, 20px/16px, 20px/16px, default font-size of 16px
+    }
 
-        &-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    &__total-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        &-value {
-            font-size: toRem(32px);
-            color: var(--value-color);
-        }
+    &__total-value {
+        font-size: toRem(32px);
+        color: var(--value-color);
     }
 }
