@@ -17,17 +17,18 @@
     &__total {
         background-color: var(--bg-calc-total);
         border-radius: 10px;
-        padding: 2.8125em 1.25em 1.25em; // 45px/16px, 20px/16px, 20px/16px, default font-size of 16px
+        padding: 2.5em 1.25em 1.25em; // 40px/16px, 20px/16px, 20px/16px, default font-size of 16px
     }
 
     &__total-group {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: end;
+        margin-bottom: toRem(25px);
     }
 
     &__total-value {
-        font-size: toRem(32px);
+        font-size: toRem(36px);
         color: var(--value-color);
     }
 }
