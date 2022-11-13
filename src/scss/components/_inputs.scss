@@ -2,6 +2,13 @@
 
 .input-group {
     margin-bottom: toRem(35px);
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        top: 48px;
+        left: 20px;
+    }
 }
 
 .label {
