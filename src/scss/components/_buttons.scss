@@ -18,6 +18,10 @@
         width: 100%;
         margin-top: 2em; // 40px/20px, .calc__btn--large font-size of 20px
         color: hsla(183, 100%, 15%, .4);
+
+        &[disabled] {
+            cursor: not-allowed;
+        }
     }
 
     &:not(&--large):hover {

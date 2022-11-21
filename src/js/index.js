@@ -3,6 +3,7 @@ const tipAmount = document.querySelector(".js-tip-amount");
 const totalAmount = document.querySelector(".js-total");
 const buttons = document.querySelectorAll(".js-btn-percent");
 const customPercent = document.querySelector(".js-percent--custom");
+const resetBtn = document.querySelector(".js-reset-btn");
 
 const splitter = {
     bill: 0,
@@ -10,25 +11,17 @@ const splitter = {
     percent: 0,
     tipPerPerson: 0,
     totalPerPerson: 0,
-    calculateTip: function () {
+    calculate: function () {
         if (this.bill !== 0 && this.numberOfPeople !== 0 && this.percent !== 0) {
             this.tipPerPerson = (this.bill * this.percent) / this.numberOfPeople;
-            return parseFloat(this.tipPerPerson).toFixed(2);
-        } else {
-            return "0.00";
-        }
-    },
-    calculateTotal: function () {
-        if (this.tipPerPerson !== 0 && this.bill !== 0 && this.numberOfPeople !== 0 && this.percent !== 0) {
+            tipAmount.textContent = `$${parseFloat(this.tipPerPerson).toFixed(2)}`;
+
             this.totalPerPerson = (this.bill / this.numberOfPeople) + this.tipPerPerson;
-            return parseFloat(this.totalPerPerson).toFixed(2);
-        } else {
-            return "0.00";
+            totalAmount.textContent = `$${parseFloat(this.totalPerPerson).toFixed(2)}`;
+
+            resetBtn.classList.add("reset--active");
+            resetBtn.disabled = false;
         }
-    },
-    updateTotals: function() {
-        tipAmount.textContent = `$${this.calculateTip()}`;
-        totalAmount.textContent = `$${this.calculateTotal()}`;
     }
 }
 
@@ -44,7 +37,7 @@ inputs.forEach(input => {
         }
     });
 
-    input.addEventListener("keyup", function (event) {
+    input.addEventListener("keyup", function () {
         if (this.id === "bill") {
             splitter.bill = Number(this.value);
         } else if (this.id === "number") {
@@ -53,7 +46,7 @@ inputs.forEach(input => {
             splitter.percent = Number(this.value) / 100;
         }
 
-        splitter.updateTotals();
+        splitter.calculate();
     });
 });
 
@@ -74,12 +67,32 @@ buttons.forEach(button => {
         // remove custom percentage when a percentage button is selected
         customPercent.value = "";
 
-        splitter.updateTotals();
+        splitter.calculate();
     });
 });
 
-customPercent.addEventListener("click", function (event) {
+customPercent.addEventListener("click", function () {
     buttons.forEach(btn => {
         btn.classList.remove("btn--active");
     })
+});
+
+resetBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    inputs.forEach(input => {
+        input.value = "";
+    });
+
+    buttons.forEach(btn => {
+        btn.classList.remove("btn--active");
+    });
+
+    splitter.bill = 0;
+    splitter.numberOfPeople = 0;
+    splitter.percent = 0;
+    tipAmount.textContent = "$0.00";
+    totalAmount.textContent = "$0.00";
+    resetBtn.classList.remove("reset--active");
+    resetBtn.disabled = true;
 });
