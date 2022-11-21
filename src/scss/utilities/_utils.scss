@@ -1,0 +1,10 @@
+@use "../base/variables" as *;
+
+/*! purgecss start ignore */
+
+// Change background color of selected percentage button
+.btn--active {
+    background-color: var(--bg-btn-active);
+}
+
+/*! purgecss end ignore */

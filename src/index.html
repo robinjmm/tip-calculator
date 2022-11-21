@@ -33,25 +33,25 @@
                 <div class="input-group">
                     <img class="input-group__icon" src="assets/images/icon-dollar.svg" alt="A dollar icon">
                     <label class="label" for="bill">Bill</label>
-                    <input class="input" type="text" id="bill" placeholder="0">
+                    <input class="input" type="text" id="bill" placeholder="0" maxlength="12">
                 </div>
 
                 <div class="input-group">
                     <p class="label">Select Tip %</p>
                     <div class="calc--flex">
-                        <button class="btn">5%</button>
-                        <button class="btn">10%</button>
-                        <button class="btn">15%</button>
-                        <button class="btn">25%</button>
-                        <button class="btn">50%</button>
-                        <input class="input input--custom" type="text" placeholder="Custom">
+                        <button class="btn js-btn-percent">5%</button>
+                        <button class="btn js-btn-percent">10%</button>
+                        <button class="btn js-btn-percent">15%</button>
+                        <button class="btn js-btn-percent">25%</button>
+                        <button class="btn js-btn-percent">50%</button>
+                        <input class="input input--custom js-percent--custom" type="text" placeholder="Custom">
                     </div>
                 </div>
 
                 <div class="input-group">
                     <img class="input-group__icon" src="assets/images/icon-person.svg" alt="A person icon">
                     <label class="label" for="number">Number of People</label>
-                    <input class="input" type="text" id="number" placeholder="0">
+                    <input class="input" type="text" id="number" placeholder="0" maxlength="12">
                 </div>
             </form>
 
@@ -59,14 +59,14 @@
                 <div class="calc__total-group">
                     <p>Tip Amount <br> <span class="label label--small">/ person</span> </p>
                     <p>
-                        <span class="calc__total-value">$0.00</span>
+                        <span class="calc__total-value js-tip-amount">$0.00</span>
                     </p>
                 </div>
 
                 <div class="calc__total-group">
                     <p>Total <br> <span class="label label--small">/ person</span> </p>
                     <p>
-                        <span class="calc__total-value">$0.00</span>
+                        <span class="calc__total-value js-total">$0.00</span>
                     </p>
                 </div>
 
@@ -74,5 +74,7 @@
             </div>
         </div>
     </main>
+
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>
