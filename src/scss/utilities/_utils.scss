@@ -12,4 +12,25 @@
     color: var(--input-color);
 }
 
+.label--visible {
+    display: block;
+}
+
+.input--error {
+    animation: shake 150ms 2 linear;
+    outline-color: var(--input-outline-error-color);
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(3px, 0);
+    }
+    50% {
+        transform: translate(-3px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
 /*! purgecss end ignore */

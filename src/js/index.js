@@ -26,18 +26,38 @@ const splitter = {
 }
 
 inputs.forEach(input => {
-    // Check each input for valid input type
+    // Check each input for invalid input type
     input.addEventListener("keydown", function (event) {
         const numbers = "0123456789";
         const {key} = event;
-        const eventKeys = ["Backspace", "Delete", ".", "ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp"];
+        const eventKeys = ["Backspace", "Delete", ".", "ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "Alt", "Control", "CapsLock", "Tab"];
 
         if (!numbers.includes(key) && !eventKeys.includes(key)) {
             event.preventDefault();
+            let previousElement = this.previousElementSibling;
+
+            this.classList.add("input--error");
+
+            // Allow the shake animation to complete before removing it.
+            // This allows the input--error class animation to run again when another invalid input type is pressed.
+            setTimeout(() => {
+                this.classList.remove("input--error");
+            }, 300)
+
+            // Check if the previous element of the input has a label element
+            if (previousElement.children.length > 0) {
+                previousElement.children[1].style.display = "block";
+
+                setTimeout(() => {
+                    previousElement.children[1].style.display = "none";
+                }, 300)
+            }
         }
     });
 
+    // Check for valid input type
     input.addEventListener("keyup", function () {
+
         if (this.id === "bill") {
             splitter.bill = Number(this.value);
         } else if (this.id === "number") {
@@ -55,7 +75,7 @@ buttons.forEach(button => {
         event.preventDefault();
         splitter.percent = parseFloat(this.textContent) / 100;
 
-        // add active styles for clicked button and remove active styles from previously click button
+        // Add active styles for clicked button and remove active styles from previously clicked button.
         buttons.forEach(btn => {
             if (btn === event.currentTarget) {
                 btn.classList.add("btn--active");
@@ -64,7 +84,7 @@ buttons.forEach(button => {
             }
         });
 
-        // remove custom percentage when a percentage button is selected
+        // Remove custom percentage when a percentage button is selected.
         customPercent.value = "";
 
         splitter.calculate();

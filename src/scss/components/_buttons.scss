@@ -9,7 +9,7 @@
     font-size: toRem(24px);
     padding: 0.625em 0; // 15px/24px, .calc__btn font-size of 24px
     border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.3s;
 
     &--large {
         font-size: toRem(20px);
@@ -22,10 +22,5 @@
         &[disabled] {
             cursor: not-allowed;
         }
-    }
-
-    &:not(&--large):hover {
-        background-color: hsl(172, 67%, 45%, .6);
-        color: var(--input-color);
     }
 }

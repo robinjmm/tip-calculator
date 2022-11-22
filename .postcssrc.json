@@ -4,8 +4,7 @@
             "content": ["./src/index.html"],
             "css": ["./src/scss/styles.scss"],
             "fontFace": true,
-            "variables": true,
-            "keyframes": true
+            "variables": true
         }
     }
 }

@@ -11,14 +11,23 @@
     }
 }
 
+.label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .label {
     color: var(--label-color);
-    display: block;
     margin-bottom: 0.5em; // 8px/16px, default font-size of 16px
 
     &--small {
         font-size: toRem(14px);
         margin-bottom: 0;
+    }
+
+    &--error {
+        color: var(--text-error-color);
+        display: none;
     }
 }
 
@@ -34,7 +43,8 @@
     border-radius: 5px;
     cursor: pointer;
 
-    &:active, &:focus {
+    // Use :where pseudo class to lower specifity in order for the .input--error utility class styles to be applied
+    &:where(:active), &:where(:focus) {
         outline: 2px solid var(--input-outline-color);
     }
 

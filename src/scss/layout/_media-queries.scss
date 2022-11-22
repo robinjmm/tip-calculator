@@ -7,11 +7,11 @@
         display: flex;
         gap: 30px;
 
-        .calc__total {
+        &__total {
             width: 50%;
             display: flex;
             flex-direction: column;
-            padding: 4.375em 2.5em 2.5em; // 70px/16px, 40px/16px, 40px/16px, default font-size of 16px
+            padding: 2.5em 2.5em 2.5em; // 40px/16px, 40px/16px, 40px/16px, default font-size of 16px
         }
     }
 
@@ -27,8 +27,20 @@
         margin-bottom: 0;
     }
 
-    .btn--large {
-        max-height: 50px;
-        margin-top: auto;
+    .btn {
+
+        &:not(&--large):hover {
+            background-color: hsla(172, 67%, 45%, .6);
+            color: var(--input-color);
+        }
+
+        &--large {
+            max-height: 50px;
+            margin-top: auto;
+
+            &:not([disabled]):hover {
+                background-color: hsl(172deg 100% 84% / 76%);
+            }
+        }
     }
 }

@@ -32,7 +32,10 @@
             <form>
                 <div class="input-group">
                     <img class="input-group__icon" src="assets/images/icon-dollar.svg" alt="A dollar icon">
-                    <label class="label" for="bill">Bill</label>
+                    <div class="label-container">
+                        <label class="label" for="bill">Bill</label>
+                        <p class="label label--error">Not a number</p>
+                    </div>
                     <input class="input" type="text" id="bill" placeholder="0" maxlength="12">
                 </div>
 
@@ -50,7 +53,11 @@
 
                 <div class="input-group">
                     <img class="input-group__icon" src="assets/images/icon-person.svg" alt="A person icon">
-                    <label class="label" for="number">Number of People</label>
+                    <div class="label-container">
+                        <label class="label" for="number">Number of People</label>
+                        <p class="label label--error">Not a number</p>
+                        <p class="label label--error">Can't be zero</p>
+                    </div>
                     <input class="input" type="text" id="number" placeholder="0" maxlength="12">
                 </div>
             </form>
