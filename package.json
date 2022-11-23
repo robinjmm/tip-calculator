@@ -2,7 +2,6 @@
   "name": "tip-calculator",
   "version": "1.0.0",
   "description": "My solution for the Tip Calculator challenge from Frontendmentor.io",
-  "main": "index.js",
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
